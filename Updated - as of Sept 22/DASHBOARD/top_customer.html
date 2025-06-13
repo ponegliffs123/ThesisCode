@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="tCustomer.css">
+    <script src="tCustomers.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />  
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="admin-profile">
+            <span class="material-symbols-outlined" style="font-size: 50px;">
+                account_circle
+            </span>            
+            <h2>ADMIN</h2>
+            <span class="material-symbols-outlined">
+                </span>
+               </div>
+        <a href="dashboard.html" class="active">
+            <span class="logos"><i class="fa fa-home"></i> </span> 
+            <span class="names_logos">Dashboard</span>
+        </a>
+        <a href="total_sales.html" class="active">
+            <span class="logos"><i class="fa fa-chart-line"></i> </span> 
+            <span class="names_logos">Total Sales</span> 
+        </a>
+        <a href="top_customer.html" class="active top-customer">
+            <span class="logos"><i class="fa fa-users"></i> </span> 
+            <span class="names_logos">Top Customer</span> 
+        </a>
+        <a href="lineLayout.html" class="active">
+            <span class="logos"><i class="fa fa-book"></i></span>      
+            <span class="names_logos">Lined Layout Available Stock</span>
+        </a>
+        <a href="unlinedLayout.html" class="active">
+            <span class="logos"><i class="fa fa-book-open"></i></span>
+            <span class="names_logos">Unlined Layout Available Stock</span> 
+        </a>
+        <a href="index.html " id="logoutLink">
+            <span class="logos"><i class="fa fa-sign-out-alt"></i> </span>
+            <span class="names_logos">Log Out</span>
+        </a>
+    </div>
+    <!--Log out-->
+    <a href="#" onclick="openLogoutModal(event)">
+       
+    </a>
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <h3>ARE YOU SURE YOU WANT TO LOG OUT?</h3>
+            <div class="modal-buttons">
+                <button id="confirmLogout" class="yes">YES</button>
+                <button id="cancelLogout" class="no">NO</button>
+            </div>
+        </div>
+    </div>  
+
+    <div class="main-content">
+        <div class="chart-container">
+            <h1>Top Customer</h1>
+            <img src="https://via.placeholder.com/100" alt="Chart Icon" class="chart-icon">
+            <div class="chart">
+                <!-- This is where you can embed your chart (e.g., using Chart.js) -->
+                <img src="https://via.placeholder.com/600x400" alt="Chart Placeholder">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

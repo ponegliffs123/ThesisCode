@@ -1,0 +1,371 @@
+/* Line Layout Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: linear-gradient(90deg, #f4f4f4, #e8e8e8, #ffffff); /* Softer, lighter background */
+    display: flex;
+}
+
+/* Sidebar styling */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100px; /* Default width for the hidden state */
+    padding-top: 20px;
+    background-color: #1c2a48; /* Darker blue for sidebar */
+    border-right: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 100; /* Ensure the sidebar remains above other content */
+    transition: width 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Admin profile section */
+.sidebar .admin-profile {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Adjust admin profile image */
+.sidebar .admin-profile img {
+    border-radius: 50%;
+    width: 100px; /* Set a specific size for the admin image */
+    height: 100px; /* Ensure height matches width for a perfect circle */
+}
+
+/* Admin email styling */
+.sidebar .admin-profile .email {
+    color: #f0f0f0; /* Light color for email text */
+    font-size: 14px; /* Adjust font size as needed */
+    margin-top: 10px; /* Space between image and email */
+}
+
+.sidebar .admin-profile #adminEmail {
+    color: #f0f0f0;
+    font-size: 14px;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar:hover .admin-profile #adminEmail {
+    opacity: 1;
+}
+
+/* Admin Icon */
+.material-symbols-outlined {
+    font-size: 100px; /* Adjust the size as needed */
+    color: #f0f0f0; /* Lighter icon for contrast */
+}
+
+/* Sidebar text and icon adjustments */
+.sidebar .names_logos {
+    display: none; /* Hide text by default */
+    font-size: 16px; /* Increased font size for consistency */
+    color: #f0f0f0; /* Consistent light text */
+    margin-left: 5px; /* Add space between the icon and the text */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+.sidebar:hover .names_logos {
+    display: block; /* Show text on hover */
+}
+
+.sidebar:hover {
+    width: 280px; /* Expanded width on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+/* Sidebar links */
+.sidebar a {
+    position: relative; /* Ensure positioning context for z-index */
+    padding: 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff; /* White text for links */
+    display: flex;
+    gap: 10px; /* Adjust gap as needed */
+    transition: background-color 0.3s;
+    align-items: center; /* Vertically align icon and text */
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in width */
+    padding-left: 30px; /* Adjust left padding for icons */
+}
+
+/* Active state for Unlined Layout link */
+.sidebar a.unlined-layout {
+    background-color: #2b3d63; /* Change this to your desired color */
+}
+
+.sidebar a:hover {
+    background-color: #2b3d63; /* Slightly darker blue hover effect */
+}
+
+/* Logos and text within sidebar links */
+a .logos {
+    display: flex;
+    font-size: 25px;
+    margin: 0;
+}
+
+a .names_logos {
+    padding-left: 10px; /* Adjust spacing as needed */
+    font-size: 16px;
+    color: #f7f3f3; /* Updated text color for consistency */
+    transition: background-color 0.3s;
+}
+
+/* Heading styles */
+.sidebar h2 {
+    color: #ffffff; /* White heading */
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.sidebar .logos {
+    margin-top: 15px; /* Adjust the distance between icons */
+    display: flex;
+    align-items: center; /* Keeps the icon vertically aligned */
+    z-index: 10; /* Icons above other content */
+}
+
+.sidebar .logos i {
+    font-size: 25px; /* Icon size */
+}
+
+/* Main content layout */
+.main-content {
+    margin-left: 120px; /* Adjust based on initial sidebar width */
+    padding: 20px;
+    flex-grow: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Consistent font for main content */
+    transition: margin-left 0.3s ease; /* Smooth transition for margin change */
+    width: calc(100% - 120px); /* Ensure it uses the remaining width */
+}
+
+.sidebar:hover ~ .main-content {
+    margin-left: 300px; /* Adjust based on expanded sidebar width */
+}
+
+/* Menu bar */
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #f7f3f3; /* Consistent color with other text elements */
+}
+
+.admin-text {
+    margin-right: 8px; /* Add spacing between "Admin" text and icon */
+}
+
+/* Admin Icon */
+.material-symbols-outlined {
+    font-size: 100px; /* Adjust the size as needed */
+    color: #f7f3f3; /* Optional: Change the color of the icon */
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex; /* Show modal when active */
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+/* Log out button */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background: linear-gradient(90deg, #8d72c2, #12c5ed, #f1f1f6);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-buttons {
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.modal-buttons .yes {
+    background-color: #28a745;
+    color: white;
+}
+
+.modal-buttons .no {
+    background-color: #dc3545;
+    color: white;
+}
+
+.modal-buttons button:hover {
+    opacity: 0.9;
+}
+
+.modal.show {
+    display: flex; /* Show modal as flexbox */
+    opacity: 1;
+}
+
+canvas {
+    width: 100%;
+    height: auto;
+}
+
+
+/* Stock card styles */
+.stock-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px; /* Slightly increased padding for a professional look */
+    margin: 10px auto; /* Centering the card */
+    width: 80%; /* Set width to make it smaller */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow for a professional appearance */
+}
+
+/* Stock card styles */
+.stock-card {
+    background-color: white;
+    border-radius: 7px;
+    padding: 10px; /* Slightly increased padding for a professional look */
+    margin: 20px auto; /* Centering the card */
+    width: 830px;
+    height: 130px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow for a professional appearance */
+}
+
+.stock-header {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    font-size: 18px; /* Increased font size for better visibility */
+    color: #333;
+}
+
+.gauge-container {
+    position: relative;
+    height: 15px; /* Reduced gauge height for a smaller appearance */
+    background: lightgrey;
+    border-radius: 5px;
+}
+
+.gauge {
+    width: calc(100% * (50 / 100)); /* Example value for gauge width */
+    height: 100%;
+    background: #4caf50; /* Green for stock */
+    border-radius: 5px;
+}
+
+/* Chart Container Styles */
+.chart-container {
+    width: 850px;
+    height: 350px;
+    margin: 20px auto; /* Center the container */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Optional shadow for effect */
+    background-color: #fff; /* Optional background color */
+    border-radius: 8px; /* Optional rounded corners */
+    overflow: hidden; /* Prevent overflow of chart */
+}
+
+/* Graph Styles */
+#stockChart {
+    width: 100%; /* Fill the container */
+    height: 100%; /* Fill the container */
+    z-index: 50; /* Keep the chart above other elements if necessary */
+    box-sizing: border-box; /* Ensure proper sizing */
+}
+
+/* Stock Value Style */
+.stock-value {
+    font-size: 16px; /* Slightly increased font size for clarity */
+    margin-top: 8px; /* Reduced margin */
+}
+
+/* Threshold Indicator */
+.threshold-indicator {
+    display: none; /* Hidden by default */
+    color: red;
+    font-weight: bold;
+    margin-top: 8px; /* Reduced margin */
+}
+
+/* Recent Transactions */
+.recent-transactions {
+    margin-top: 20px; /* Space above section */
+    text-align: left; /* Align left for professionalism */
+}
+
+.recent-transactions h3 {
+    font-size: 18px; /* Larger for section header */
+    color: #2c3e50; /* Consistent with header color */
+    margin-bottom: 10px; /* Space below header */
+}
+
+.recent-transactions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recent-transactions li {
+    background: #f9f9f9; /* Light grey for transaction items */
+    margin: 5px 0;
+    padding: 10px; /* Increased padding for comfort */
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-size: 14px; /* Consistent font size */
+    color: #34495e; /* Darker text for readability */
+}
+
+/* Recent Transaction Timestamp */
+.recent-transactions li .timestamp {
+    font-size: 12px; /* Smaller font size for timestamp */
+    color: #7f8c8d; /* Lighter color for less emphasis */
+    text-align: right; /* Right-align for clarity */
+}

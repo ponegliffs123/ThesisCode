@@ -1,0 +1,122 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #343a40; /* Darker background color */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #f8f9fa; /* Light text color */
+}
+
+#container {
+    width: 100%;
+    max-width: 700px;
+    background-color: #ffffff; /* Light container color */
+    padding: 40px; /* Increased padding for better spacing */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    text-align: center; /* Center content */
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px; /* Increased margin for better spacing */
+}
+
+#slsulogo, #celogo, #icpep {
+    height: 60px; /* Increased logo size for better visibility */
+    margin: 0 20px; /* Increased margin */
+}
+
+h1 {
+    font-size: 32px; /* Increased font size for the main heading */
+    font-weight: bold;
+    color: #003366; /* University theme color */
+    margin: 20px 0;
+}
+
+p {
+    font-size: 16px; /* Increased font size for better readability */
+    margin-bottom: 25px; /* Increased margin */
+}
+
+a {
+    color: #007bff; /* Bootstrap primary color */
+    text-decoration: none;
+    font-weight: 500; /* Slightly bolder text for links */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.form-group {
+    margin-bottom: 20px; /* Increased margin for better spacing */
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px; /* Increased margin for better spacing */
+    font-size: 16px; /* Increased font size for labels */
+    color: #333; /* Darker color for better contrast */
+}
+
+.form-group input {
+    width: 100%; /* Changed to 100% for full-width input */
+    max-width: 90%; /* Ensure it doesn’t exceed container width */
+    padding: 10px; /* Adjusted padding for a more compact look */
+    border: 1px solid #ccc; /* Slightly darker border for better visibility */
+    border-radius: 5px;
+    font-size: 16px; /* Font size for input fields */
+    color: #495057; /* Dark text color for input */
+}
+
+.form-group input::placeholder {
+    color: #999; /* Lighter placeholder color for better visibility */
+    opacity: 1; /* Ensure placeholder is fully opaque */
+}
+
+.form-group input:focus {
+    border-color: #003366; /* Highlight on focus */
+    outline: none; /* Remove default outline */
+}
+
+.btn {
+    background-color: #003366; /* Primary button color */
+    color: white;
+    padding: 12px 24px; /* Increased padding for better touch targets */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px; /* Increased font size for buttons */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker on hover */
+}
+
+.error-message {
+    color: red;
+    font-size: 14px; /* Size kept the same for consistency */
+    display: none; /* Initially hidden */
+}
+
+@media screen and (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #slsulogo, #celogo, #icpep {
+        height: 50px; /* Adjust logo size for smaller screens */
+    }
+
+    h1 {
+        font-size: 28px; /* Adjusted for smaller screens */
+    }
+}

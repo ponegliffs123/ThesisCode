@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="dashboard.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400">
+</head>
+<body>
+    <!-- Sidebar Section -->
+    <div class="sidebar">
+        <div class="admin-profile">
+            <span class="material-symbols-outlined" style="font-size: 50px;">
+                account_circle
+            </span>            
+            <h2 id="adminEmail" class="email">admin@example.com</h2> <!-- Placeholder for admin's email -->
+        </div>
+
+        <!-- Sidebar Links -->
+        <a href="dashboard.html" class="active">
+            <span class="logos"><i class="fa fa-home"></i></span> 
+            <span class="names_logos">Dashboard</span>
+        </a>
+        <a href="total_sales.html" class="active">
+            <span class="logos"><i class="fa fa-chart-line"></i></span> 
+            <span class="names_logos">Total Sales</span> 
+        </a>
+        <a href="top_customer.html" class="active">
+            <span class="logos"><i class="fa fa-users"></i></span> 
+            <span class="names_logos">Top Customer</span>
+        </a>
+        <a href="lineLayout.html" class="active">
+            <span class="logos"><i class="fa fa-book"></i></span>      
+            <span class="names_logos">Lined Layout Available Stock</span>
+        </a>
+        <a href="unlinedLayout.html" class="active">
+            <span class="logos"><i class="fa fa-book-open"></i></span>
+            <span class="names_logos">Unlined Layout Available Stock</span> 
+        </a>
+        <a href="#" id="logoutLink">
+            <span class="logos"><i class="fa fa-sign-out-alt"></i></span>
+            <span class="names_logos">Log Out</span>
+        </a>
+    </div>
+
+    <!-- Notification Bell -->
+    <div class="notification-bell">
+        <i class="fa-solid fa-bell"></i>
+        <span class="badge">3</span>
+    </div>
+
+    <!-- Notification Panel -->
+    <div id="notification-panel" class="notification-panel">
+        <h4>Notifications</h4>
+        <ul id="notification-list">
+            <!-- Notifications will be dynamically added here -->
+        </ul>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main">
+        <div class="header">
+            <h1>Welcome, Admin!</h1>
+        </div>
+        <div class="container">
+            <div class="card" id="top-customers">
+                <h3>Top Customer</h3>
+                <p>Program: <b></b><span id="top-department"></span></p>
+            </div>
+            <div class="card" id="total-sales">
+                <h3>Total Sales</h3>
+                <canvas id="salesChart"></canvas>
+            </div>
+            <div class="card" id="lined-stock">
+                <h3>Lined Layout Available Stock</h3>
+                <p id="lined-stock-amount">Stock: 0</p>
+            </div>
+            <div class="card" id="unlined-stock">
+                <h3>Unlined Layout Available Stock</h3>
+                <p id="unlined-stock-amount">Stock: 0</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <h3>ARE YOU SURE YOU WANT TO LOG OUT?</h3>
+            <div class="modal-buttons">
+                <button id="confirmLogout" class="yes">YES</button>
+                <button id="cancelLogout" class="no">NO</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard.js" defer></script>
+</body>
+</html>

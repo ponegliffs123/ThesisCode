@@ -1,0 +1,343 @@
+/* Total Sales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: linear-gradient(90deg, #f4f4f4, #e8e8e8, #ffffff); /* Softer, lighter background */
+    display: flex;
+}
+
+/* Sidebar styling */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100px; /* Default width for the hidden state */
+    padding-top: 20px;
+    background-color: #1c2a48; /* Darker blue for sidebar */
+    border-right: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 100; /* Ensure the sidebar remains above other content */
+    transition: width 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+    /* Center content vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Admin profile section */
+.sidebar .admin-profile {
+    text-align: center;
+    margin-bottom: 20px;
+    /* Center admin profile section */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Adjust admin profile image */
+.sidebar .admin-profile img {
+    border-radius: 50%;
+    width: 100px; /* Set a specific size for the admin image */
+    height: 100px; /* Ensure height matches width for a perfect circle */
+}
+
+/* Admin email styling */
+.sidebar .admin-profile .email {
+    color: #f0f0f0; /* Light color for email text */
+    font-size: 14px; /* Adjust font size as needed */
+    margin-top: 10px; /* Space between image and email */
+}
+
+.sidebar .admin-profile #adminEmail {
+    color: #f0f0f0;
+    font-size: 14px;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar:hover .admin-profile #adminEmail {
+    opacity: 1;
+}
+
+/* Admin Icon */
+.material-symbols-outlined {
+    font-size: 100px; /* Adjust the size as needed */
+    color: #f0f0f0; /* Lighter icon for contrast */
+}
+
+/* Sidebar text and icon adjustments */
+.sidebar .names_logos {
+    display: none; /* Hide text by default */
+    font-size: 16px; /* Increased font size for consistency */
+    color: #f0f0f0; /* Consistent light text */
+    margin-left: 5px; /* Add space between the icon and the text */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+.sidebar:hover .names_logos {
+    display: block; /* Show text on hover */
+}
+
+.sidebar:hover {
+    width: 280px; /* Expanded width on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+/* Sidebar links */
+.sidebar a {
+    position: relative; /* Ensure positioning context for z-index */
+    padding: 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff; /* White text for links */
+    display: flex;
+    gap: 10px; /* Adjust gap as needed */
+    transition: background-color 0.3s;
+    align-items: center; /* Vertically align icon and text */
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in width */
+    padding-left: 30px; /* Adjust left padding for icons */
+}
+
+/* Active state for Total Sales link */
+.sidebar a.total-sales {
+    background-color: #2b3d63; /* Change this to your desired color */
+}
+
+.sidebar a:hover {
+    background-color: #2b3d63; /* Slightly darker blue hover effect */
+}
+
+/* Logos and text within sidebar links */
+a .logos {
+    display: flex;
+    font-size: 25px;
+    margin: 0;
+}
+
+a .names_logos {
+    padding-left: 10px; /* Adjust spacing as needed */
+    font-size: 16px;
+    color: #f7f3f3; /* Updated text color for consistency */
+    transition: background-color 0.3s;
+}
+
+/* Heading styles */
+.sidebar h2 {
+    color: #ffffff; /* White heading */
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.sidebar .logos {
+    margin-top: 15px; /* Adjust the distance between icons */
+    display: flex;
+    align-items: center; /* Keeps the icon vertically aligned */
+    z-index: 10; /* Icons above other content */
+}
+
+.sidebar .logos i {
+    font-size: 25px; /* Icon size */
+}
+
+/* Main content layout */
+.main-content {
+    margin-left: 120px; /* Adjust based on initial sidebar width */
+    padding: 20px;
+    flex-grow: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Consistent font for main content */
+    transition: margin-left 0.3s ease; /* Smooth transition for margin change */
+}
+
+.sidebar:hover ~ .main-content {
+    margin-left: 300px; /* Adjust based on expanded sidebar width */
+}
+
+/* Menu bar */
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #f7f3f3; /* Consistent color with other text elements */
+}
+
+.admin-text {
+    margin-right: 8px; /* Add spacing between "Admin" text and icon */
+}
+
+
+/* Admin Icon */
+.material-symbols-outlined {
+    font-size: 100px; /* Adjust the size as needed */
+    color: #f7f3f3; /* Optional: Change the color of the icon */
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex; /* Show modal when active */
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Container for cards */
+.containers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* Table */
+.containers {
+    background-color: #2a4d80;
+    border-radius: 10px;
+    padding: 20px; /* Increased padding to make it bigger */
+    width: 100%; /* Keep the width as it is */
+    max-width: 1200px; /* Prevent it from growing too large on bigger screens */
+    margin: 0 auto;
+    margin-left: -30px; /* Move the container left by 30px */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+/* Header section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Search box */
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 5px 10px;
+    width: 300px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 5px;
+    flex: 1;
+    border-radius: 20px;
+}
+
+.search-box button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #555;
+}
+
+th {
+    background-color: #5173a5;
+}
+
+td {
+    background-color: #3b5a8a;
+}
+
+/* Chart icon */
+.chart-icon {
+    text-align: right;
+    padding: 10px;
+}
+
+.chart-icon img {
+    width: 60px;
+    height: auto;
+}
+
+
+/* General container styles */
+.container-row {
+    display: flex;
+    justify-content: center; /* Center containers horizontally */
+    align-items: center; /* Center containers vertically */
+    gap: 10px; /* Reduced space between containers */
+    flex-wrap: wrap; /* Ensure containers wrap to the next line if necessary */
+    margin: 0 auto; /* Center the row itself */
+    height: 100vh; /* Full viewport height for vertical centering */
+    max-width: 75%; /* Optional: Limit the maximum width of the container row */
+}
+
+.container {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+    flex: 1;
+    min-width: 200px; /* Smaller minimum width for smaller containers */
+    max-width: 45%; /* Smaller maximum width for side-by-side display */
+    margin-top: 20px; /* Added larger top margin */
+}
+
+.container h2 {
+    margin-bottom: 10px;
+    font-size: 1em; /* Adjusted font size for smaller containers */
+    color: #333;
+    text-align: center;
+}
+
+canvas {
+    max-width: 100%;
+    height: 110px; /* Adjusted height for smaller containers */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}

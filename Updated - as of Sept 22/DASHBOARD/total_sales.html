@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total_Sales</title>
+    <link rel="stylesheet" href="tSales.css">
+    <script src="tSales.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="admin-profile">
+            <span class="material-symbols-outlined" style="font-size: 50px;">
+                account_circle
+            </span>            
+            <h2 id="adminEmail" class="email">admin@example.com</h2> <!-- Placeholder for admin's email -->
+        </div>
+        
+        <a href="dashboard.html" class="active">
+            <span class="logos"><i class="fa fa-home"></i> </span>
+            <span class="names_logos">Dashboard</span>
+        </a>
+        <a href="total_sales.html" class="active total-sales">
+            <span class="logos"><i class="fa fa-chart-line"></i></span> 
+            <span class="names_logos">Total Sales</span> 
+        </a>        
+        <a href="top_customer.html" class="active">
+            <span class="logos"><i class="fa fa-users"></i> </span>
+            <span class="names_logos">Top Customer</span>
+        </a>
+        <a href="lineLayout.html" class="active">
+            <span class="logos"><i class="fa fa-book"></i></span>
+            <span class="names_logos">Lined Layout Available Stock</span>
+        </a>
+        <a href="unlinedLayout.html" class="active">
+            <span class="logos"><i class="fa fa-book-open"></i></span>
+            <span class="names_logos">Unlined Layout Available Stock</span>
+        </a>
+        <a href="index.html" id="logoutLink">
+            <span class="logos"><i class="fa fa-sign-out-alt"></i> </span>
+            <span class="names_logos">Log Out</span>
+        </a>
+    </div>
+    
+    <div class="container-row">
+        <div class="container" id="sales-by-product">
+            <h2>Sales by Product</h2>
+            <canvas id="product-sales-chart"></canvas>
+        </div>
+
+        <div class="container" id="sales-per-department">
+            <h2>Sales per College</h2>
+            <canvas id="department-sales-chart"></canvas>
+        </div>
+
+        <div class="main-content">
+            <div class="containers">
+                <div class="header">
+                    <h1>TOTAL SALES</h1>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="YYYY-MM-DD">
+                        <button type="submit" onclick="filterTable()">&#128269;</button>
+                    </div>
+                    <!-- Download PDF button -->
+                    <button id="downloadPDF" style="position: absolute; top: 20px; right: 20px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                        Download PDF
+                    </button>
+                </div>
+        
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Type of Paper</th>
+                            <th>Quantity</th>
+                            <th>Time Stamp</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="salesTableBody">
+                        <tr>
+                            <td>Course 1</td>
+                            <td>Type A</td>
+                            <td>10</td>
+                            <td>2024-08-27 10:00</td>
+                            <td>php100</td>
+                        </tr>
+                        <tr>
+                            <td>Course 2</td>
+                            <td>Type B</td>
+                            <td>5</td>
+                            <td>2024-08-26 12:30</td>
+                            <td>php50</td>
+                        </tr>
+                        <tr>
+                            <td>Course 3</td>
+                            <td>Type C</td>
+                            <td>8</td>
+                            <td>2024-08-25 09:00</td>
+                            <td>php80</td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
+            </div>
+        </div>        
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
